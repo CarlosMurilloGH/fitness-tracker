@@ -14,18 +14,18 @@ function ProgressTable() {
     const arr=data.map((data)=>{
         return(
           <tbody>
-            <tr key={data.date} className="bg-stone-900">
-              <td className="p-4 text-slate-100 font-semibold">{data.date}</td>
-              <td className="p-4 text-slate-100 font-semibold">{data.hip}</td>
-              <td className="p-4 text-slate-100 font-semibold">{data.waist}</td>
-              <td className="p-4 text-slate-100 font-semibold">{data.umbilical}</td>
-              <td className="p-4 text-slate-100 font-semibold">{data.arms}</td>
-              <td className="p-4 text-slate-100 font-semibold">{data.torax}</td>
-              <td className="p-4 text-slate-100 font-semibold">{data.leg}</td>
-              <td className="p-4 text-slate-100 font-semibold">{data.weight}</td>
-              <td className="p-4 text-slate-100 font-semibold">{data.bodyfat}%</td>
-              <td><button className="border-2 bg-blue-700 text-slate-100 border-blue-700 px-3 py-1 rounded-md text-1xl font-medium hover:bg-blue-500 transition duration-300">edit</button></td>
-              <td><button className="border-2 bg-red-600 text-slate-100 border-red-600 px-3 py-1 rounded-md text-1xl font-medium hover:bg-red-600 transition duration-300" 
+            <tr key={data.date} className="border-2 border-blue-700">
+              <td className="p-4 text-gray-600">{data.date}</td>
+              <td className="p-4 text-gray-600">{data.hip}</td>
+              <td className="p-4 text-gray-600">{data.waist}</td>
+              <td className="p-4 text-gray-600">{data.umbilical}</td>
+              <td className="p-4 text-gray-600">{data.arms}</td>
+              <td className="p-4 text-gray-600">{data.torax}</td>
+              <td className="p-4 text-gray-600">{data.leg}</td>
+              <td className="p-4 text-gray-600">{data.weight}</td>
+              <td className="p-4 text-gray-600">{data.bodyfat}%</td>
+              <td><button className="border-2 bg-blue-700 text-slate-100 border-blue-700 px-3 py-1 rounded-md text-1xl hover:bg-blue-500 transition duration-300">edit</button></td>
+              <td><button className="border-2 bg-red-600 text-slate-100 border-red-600 px-3 py-1 rounded-md text-1xl hover:bg-red-600 transition duration-300" 
               >Delete</button></td>
             </tr>
           </tbody>
@@ -34,9 +34,9 @@ function ProgressTable() {
       })
   
   return (
-    <div className="usersDisplay w-1/2">
-        <table className="table text-slate border-separate text-sm justify-center m-auto">
-          <thead className="bg-stone-900 text-slate-100">
+    <div className="bg-white block justify-center mx-auto p-2 shadow-2xl rounded-md">
+        <table className="text-slate text-sm justify-center mx-auto">
+          <thead className="text-white border-2 border-blue-700 bg-blue-700">
             <tr>
               <th className="p-4 text-left">Date</th>
               <th className="p-4 text-left">Hip</th>
