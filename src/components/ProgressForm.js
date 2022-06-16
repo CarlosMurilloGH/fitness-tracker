@@ -16,13 +16,13 @@ function ProgressForm() {
     const [bodyfat,setBodyfat]=useState(0);
 
     useEffect(()=>{
-        Axios.get("http://localhost:3001/getusers").then((response)=>{
+        Axios.get("https://mern-fitness-tracker-cm2022.herokuapp.com/getusers").then((response)=>{
           setData(response.data);
         });
       },[])
     
       const createUser = ()=>{
-         Axios.post("http://localhost:3001/createUser",{date,hip,waist,umbilical,arms,torax,leg,weight,bodyfat}).then((response)=>{
+         Axios.post("https://mern-fitness-tracker-cm2022.herokuapp.com/createUser",{date,hip,waist,umbilical,arms,torax,leg,weight,bodyfat}).then((response)=>{
           setData([...data,{date,hip,waist,umbilical,arms,torax,leg,weight,bodyfat}])
         })
       }

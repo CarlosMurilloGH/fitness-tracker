@@ -6,7 +6,7 @@ function ProgressTable() {
     const [data,setData] = useState([]);
 
     useEffect(()=>{
-      Axios.get("http://localhost:3001/getusers").then((response)=>{
+      Axios.get("https://mern-fitness-tracker-cm2022.herokuapp.com/getusers").then((response)=>{
         setData(response.data);
       });
     },[])
