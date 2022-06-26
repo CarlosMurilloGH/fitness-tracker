@@ -11,22 +11,31 @@ function ProgressTable() {
       });
     },[])
 
+    const deleteUser = (id)=>{
+      Axios.delete(`https://mern-fitness-tracker-cm2022.herokuapp.com/deleteUser/${id}`)
+      .then(()=>{
+         setData(data.filter((data)=>{
+          return data._id !== id;
+         }))
+      })
+   }
+
     const arr=data.map((data)=>{
         return(
-          <tbody>
-            <tr key={data.date} className="border-2 border-blue-700">
-              <td className="p-4 text-gray-600">{data.date}</td>
-              <td className="p-4 text-gray-600">{data.hip}</td>
-              <td className="p-4 text-gray-600">{data.waist}</td>
-              <td className="p-4 text-gray-600">{data.umbilical}</td>
-              <td className="p-4 text-gray-600">{data.arms}</td>
-              <td className="p-4 text-gray-600">{data.torax}</td>
-              <td className="p-4 text-gray-600">{data.leg}</td>
-              <td className="p-4 text-gray-600">{data.weight}</td>
-              <td className="p-4 text-gray-600">{data.bodyfat}%</td>
-              <td><button className="border-2 bg-blue-700 text-slate-100 border-blue-700 px-3 py-1 rounded-md text-1xl hover:bg-blue-500 transition duration-300">edit</button></td>
-              <td><button className="border-2 bg-red-600 text-slate-100 border-red-600 px-3 py-1 rounded-md text-1xl hover:bg-red-600 transition duration-300" 
-              >Delete</button></td>
+          <tbody key={data._id}>
+            <tr className="border-2 border-indigo-700">
+              <td className="p-4 text-zinc-50">{data.date}</td>
+              <td className="p-4 text-zinc-50">{data.hip}</td>
+              <td className="p-4 text-zinc-50">{data.waist}</td>
+              <td className="p-4 text-zinc-50">{data.umbilical}</td>
+              <td className="p-4 text-zinc-50">{data.arms}</td>
+              <td className="p-4 text-zinc-50">{data.torax}</td>
+              <td className="p-4 text-zinc-50">{data.leg}</td>
+              <td className="p-4 text-zinc-50">{data.weight}</td>
+              <td className="p-4 text-zinc-50">{data.bodyfat}%</td>
+              <td><button className="border-2 bg-indigo-700 text-zinc-50 border-indigo-700 px-3 py-1 rounded-md text-1xl hover:bg-indigo-700 transition duration-300">edit</button></td>
+              <td><button className="border-2 bg-red-600 text-zinc-50 border-red-600 px-3 py-1 rounded-md text-1xl hover:bg-red-600 transition duration-300" 
+              onClick={()=>{deleteUser(data._id)}}>Delete</button></td>
             </tr>
           </tbody>
           
@@ -34,9 +43,9 @@ function ProgressTable() {
       })
   
   return (
-    <div className="bg-white block justify-center mx-auto p-2 shadow-2xl rounded-md">
+    <div className="bg-zinc-900 block justify-center mx-auto p-3 rounded-md">
         <table className="text-slate text-sm justify-center mx-auto">
-          <thead className="text-white border-2 border-blue-700 bg-blue-700">
+          <thead className="text-white border-2 border-indigo-700 bg-indigo-700">
             <tr>
               <th className="p-4 text-left">Date</th>
               <th className="p-4 text-left">Hip</th>
