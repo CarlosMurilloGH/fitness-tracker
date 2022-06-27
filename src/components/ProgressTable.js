@@ -33,7 +33,6 @@ function ProgressTable() {
               <td className="p-4 text-zinc-50">{data.leg}</td>
               <td className="p-4 text-zinc-50">{data.weight}</td>
               <td className="p-4 text-zinc-50">{data.bodyfat}%</td>
-              <td><button className="border-2 bg-indigo-700 text-zinc-50 border-indigo-700 px-3 py-1 rounded-md text-1xl hover:bg-indigo-700 transition duration-300">edit</button></td>
               <td><button className="border-2 bg-red-600 text-zinc-50 border-red-600 px-3 py-1 rounded-md text-1xl hover:bg-red-600 transition duration-300" 
               onClick={()=>{deleteUser(data._id)}}>Delete</button></td>
             </tr>
@@ -43,8 +42,8 @@ function ProgressTable() {
       })
   
   return (
-    <div className="bg-zinc-900 block justify-center mx-auto p-3 rounded-md">
-        <table className="text-slate text-sm justify-center mx-auto">
+    <div className="bg-zinc-900 block justify-center mx-auto p-3 rounded-md max-w-full overflow-x-auto">
+        <table className="text-slate text-sm justify-center mx-auto table-auto">
           <thead className="text-white border-2 border-indigo-700 bg-indigo-700">
             <tr>
               <th className="p-4 text-left">Date</th>
@@ -56,7 +55,6 @@ function ProgressTable() {
               <th className="p-4 text-left">Leg</th>
               <th className="p-4 text-left">Weight</th>
               <th className="p-4 text-left">Bodyfat</th>
-              <th className="p-4 text-left">Edit</th>
               <th className="p-4 text-left">Delete</th>
             </tr>
           </thead>
